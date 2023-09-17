@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/backgrounddd">
+
+    <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        android:id="@+id/card"
+        app:max_visible="7"
+        app:min_adapter_stack="8"
+        app:rotation_degrees="0"
+        android:layout_width="400dp"
+        android:layout_height="620dp"
+        android:layout_centerInParent="true"/>
+
+    <!--    Upper Layout  -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/upper_bar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/upper_bar" />
+
+        <ImageView
+            android:id="@+id/shield"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@id/upper_bar"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="35dp"
+            android:src="@drawable/fshield" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="8dp" >
+
+            <ProgressBar
+                android:id="@+id/shieldBar"
+                android:progressTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="35dp"
+                android:progress="30"
+                android:progressBackgroundTint="@color/transparent"
+                style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+            <ProgressBar
+                android:id="@+id/moneyBar"
+                android:progressTint="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_alignEnd="@+id/shieldBar"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="90dp"
+                android:progress="30"
+                android:progressBackgroundTint="@color/transparent"
+                style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+            <ProgressBar
+                android:id="@+id/powerBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_alignEnd="@+id/moneyBar"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="86dp"
+                android:progress="30"
+                android:progressBackgroundTint="@color/transparent"
+                android:progressTint="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/foodBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                android:layout_alignEnd="@+id/powerBar"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="85dp"
+                android:progress="30"
+                android:progressBackgroundTint="@color/transparent"
+                android:progressTint="@color/white" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/dollar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@id/upper_bar"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="125dp"
+            android:src="@drawable/medic" />
+
+        <ImageView
+            android:id="@+id/flash"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/fpower" />
+
+        <ImageView
+            android:id="@+id/food"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ffood" />
+
+    </RelativeLayout>
+
+    <!--    Bottom Layout  -->
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintTop_toTopOf="@+id/card"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bottom_bar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="631dp" />
+
+        <TextView
+            android:id="@+id/days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="130dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="31dp"
+            android:layout_toEndOf="@+id/days"
+            android:fontFamily="serif"
+            android:text="Days in power"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/years"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+
+
+    </RelativeLayout>
+
+    <!--Scenario-->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="104dp"
+        android:layout_height="73dp"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="557dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="21dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+    <TextView
+        android:id="@+id/scenarios"
+        android:text="Hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
